@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: radial-gradient(#0a5b89 10%, #091638 90%) no-repeat center;
+  background-size: cover;
+}
+header {
+  height: 1rem;
+  position: relative;
+  h1 {
+    text-align: center;
+    line-height: 1rem;
+    color: honeydew;
+    font-size: 0.475rem;
+  }
+}
+.time {
+  position: absolute;
+  top: 45%;
+  right: 0.25rem;
+  font-size: 0.2rem;
+  color: #fff;
+}
+.mainbox {
+  display: flex;
+  flex-direction: row;
+  min-width: 1024px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.column {
+  flex: 3;
+}
+.column:nth-child(2) {
+  flex: 5;
+}
+.panel {
+  height: 3.875rem;
+  border: 1px solid rgba(29, 43, 39, 0.17);
+  padding: 0 0.1875rem 0.5rem;
+  margin-bottom: 0.1875rem;
+  position: relative;
+  &:before {
+    content: "";
+    width: 0.1rem;
+    height: 0.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid #026ab5;
+    border-top: 1px solid #026ab5;
+  }
+  &::after {
+    content: "";
+    width: 0.1rem;
+    height: 0.1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: 1px solid #026ab5;
+    border-top: 1px solid #026ab5;
+  }
+  .panel-footer {
+    height: 0.125rem;
+    &:before {
+      content: "";
+      width: 0.1rem;
+      height: 0.1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-left: 1px solid #026ab5;
+      border-bottom: 1px solid #026ab5;
+    }
+    &::after {
+      content: "";
+      width: 0.1rem;
+      height: 0.1rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-right: 1px solid #026ab5;
+      border-bottom: 1px solid #026ab5;
+    }
+  }
+  h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 0.25rem;
+  }
+  .chart {
+    height: 3rem;
+    // background-color: pink;
+  }
+}
+
+.center {
+  .no {
+    padding: 0.1875rem;
+    background-color: rgba(101, 132, 226, 0.1);
+    margin: 0 0.125rem 0.1875rem 0.125rem;
+    .no-hd {
+      display: flex;
+      justify-content: space-around;
+      border: 1px solid rgba(29, 43, 39, 0.17);
+      align-items: center;
+      position: relative;
+      padding: 0.1875rem;
+      span {
+        font-size: 0.3rem;
+        color: #026ab5;
+        flex: 1;
+        text-align: center;
+      }
+      span:first-child {
+        border-right: 1px solid rgba(29, 43, 39, 0.17);
+      }
+      &:before {
+        content: "";
+        width: 0.125rem;
+        height: 0.1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: 1px solid #026ab5;
+        border-top: 1px solid #026ab5;
+      }
+      &::after {
+        content: "";
+        width: 0.125rem;
+        height: 0.1rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-right: 1px solid #026ab5;
+        border-bottom: 1px solid #026ab5;
+      }
+    }
+    .no-ft {
+      display: flex;
+      justify-content: space-around;
+      color: #fff;
+      font-size: 0.2rem;
+      span {
+        flex: 1;
+        text-align: center;
+        padding-top: 0.1875rem;
+      }
+    }
+  }
+  color: rgb(86, 184, 230);
+}
+.map {
+  position: relative;
+  height: 10.125rem;
+  background: url("../images/fly.png") no-repeat center;
+  background-size: contain;
+  .bg1 {
+    position: absolute;
+    width: 3.125rem;
+    height: 3.125rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../images/circle.png") no-repeat center;
+    background-size: 100%;
+    animation: clire 3s linear infinite;
+  }
+  .bg2 {
+    position: absolute;
+    width: 2.925rem;
+    height: 2.925rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url("../images/world.png") no-repeat center;
+    background-size: 100%;
+    animation: move 3s linear infinite;
+  }
+}
+#map {
+  height: 10.125rem;
+}
+@keyframes move {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes clire {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+}
